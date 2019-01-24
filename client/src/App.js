@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "antd/dist/antd.css";
 import "./app.css"
 import BeerCard from "./Components/BeerCard";
-import { Button, Layout } from "antd";
+import { Button, Icon } from "antd";
 
 class App extends Component {
   constructor(props) {
@@ -30,9 +30,10 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <h3>Random Beer Generator</h3>
-        <Button onClick={this.handleClick} type="primary">
-          Find my drink!
+        <h3 className="title">Random Beer Generator</h3>
+        <Button onClick={this.handleClick}  size="large" >
+          Find my drink
+          <Icon type="right" />
         </Button>
 
         {/* generate beer list */}
