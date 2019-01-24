@@ -61,6 +61,5 @@ typings/
 .next
 
 routes/
-server.js
 models/
 controllers/
