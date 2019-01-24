@@ -1,20 +1,21 @@
 import React, { Component } from "react";
-import { Card } from 'antd';
+import { Card, Divider, Icon } from 'antd';
+
 
 const BeerCard = (props) =>{
-  return(
-  <div>
-    <Card
-      title={props.name}
-      extra={<a href="#">More</a>}
-      style={{ width: 300 }}
-    >
-    <img src={props.thumbnail} height="300px" alt="" />
-      <p>{props.abv}</p>
-      <p>{props.ibu}</p>
-      <p>{props.description}</p>
-    </Card>
-  </div>
-  )
+    const { Meta } = Card;
+    return(
+<Card
+    style={{ width: 500 }}
+    title={props.name}
+    cover={<img className="beerimg" alt="beerimage" src={props.thumbnail}  />}
+    actions={[<p>ABV: {props.abv}</p>, <p>IBU: {props.ibu}</p>, <Icon type="star" theme="filled" />]}
+    // actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+  >
+    
+    <Divider orientation="left">{props.tagline} </Divider>
+     <Meta description={props.description}  />
+  </Card>
+    )
 };
 export default BeerCard;

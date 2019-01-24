@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "antd/dist/antd.css";
+import "./app.css"
 import BeerCard from "./Components/BeerCard";
 import { Button, Layout } from "antd";
 
@@ -27,16 +28,15 @@ class App extends Component {
   }
 
   render() {
-    const stat = this.state.beers;
     return (
       <div className="container">
-        <h3>Get a Random Beer</h3>
+        <h3>Random Beer Generator</h3>
         <Button onClick={this.handleClick} type="primary">
-          Click to Search!
+          Find my drink!
         </Button>
 
         {/* generate beer list */}
-        <div>
+        <div className="results">
           {this.state.beers.map((beer, _id) => {
             return (
               <BeerCard
@@ -47,6 +47,7 @@ class App extends Component {
                 abv={beer.abv}
                 ibu={beer.ibu}
                 description={beer.description}
+                tagline={beer.tagline}
               />
             );
           })}
