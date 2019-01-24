@@ -1,16 +1,20 @@
 import React, { Component } from "react";
+import "antd/dist/antd.css";
+import BeerCard from "./Components/BeerCard";
+import { Button, Layout } from "antd";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      beertitle: "beer title",
       beers: [],
       randombeer: []
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
-  // handle button click
+  // handle button click for random beer
   handleClick() {
     fetch("https://api.punkapi.com/v2/beers/random")
       .then(res => {
@@ -23,22 +27,30 @@ class App extends Component {
   }
 
   render() {
+    const stat = this.state.beers;
     return (
-      <div className="App">
+      <div className="container">
         <h3>Get a Random Beer</h3>
-        <button onClick={this.handleClick}>Click to Search!</button>
+        <Button onClick={this.handleClick} type="primary">
+          Click to Search!
+        </Button>
 
         {/* generate beer list */}
-        {this.state.beers.map(beer => (
-          <ul key={beer.id}>
-            <li>{beer.name}</li>
-            <li>{beer.tagline}</li>
-            <img src={beer.image_url} height="300px" />
-            <li> ABV: {beer.abv} </li>
-            <li> IBU: {beer.ibu} </li>
-            <li> Description: {beer.description} </li>
-          </ul>
-        ))}
+        <div>
+          {this.state.beers.map((beer, _id) => {
+            return (
+              <BeerCard
+                key={_id}
+                id={beer.id}
+                name={beer.name}
+                thumbnail={beer.image_url}
+                abv={beer.abv}
+                ibu={beer.ibu}
+                description={beer.description}
+              />
+            );
+          })}
+        </div>
       </div>
     );
   }
