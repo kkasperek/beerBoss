@@ -1,0 +1,29 @@
+{
+  "name": "beerBoss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kkasperek/beerBoss.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kkasperek/beerBoss/issues"
+  },
+  "homepage": "https://github.com/kkasperek/beerBoss#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.4.6",
+    "request": "^2.88.0"
+  }
+}
