@@ -1,6 +1,4 @@
 const express = require("express");
-const routes = require("./routes");
-var request = require('request');
 const mongoose = require("mongoose");
 //const routes = require("./routes");
 
@@ -10,7 +8,6 @@ const PORT = process.env.PORT || 3001;
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
 
 // Serve up static assets 
 if (process.env.NODE_ENV === "production") {
