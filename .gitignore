@@ -63,3 +63,4 @@ typings/
 routes/
 models/
 controllers/
+config/
